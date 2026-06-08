@@ -1,0 +1,235 @@
+/* RARM page-level styles — adapted from SimDist / OmniReset template */
+
+a {
+  color: inherit;
+}
+
+.skip-link {
+  position: fixed;
+  left: 12px;
+  top: 12px;
+  transform: translateY(-150%);
+  background: var(--text-primary);
+  color: #fff;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  z-index: 999;
+  text-decoration: none;
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
+}
+
+/* ── Section base ─────────────────────────────────────────────────────── */
+
+.main-content .section-card {
+  padding: 32px;
+  margin: 0 0 24px;
+  color: var(--text-secondary);
+  background: var(--bg-surface);
+  border-top: 0;
+  text-align: center;
+}
+
+.main-content .section {
+  padding: 32px;
+}
+
+.main-content .section-motivation,
+.main-content .section-method,
+.main-content .section-simulation,
+.main-content .section-realworld {
+  background: var(--bg-surface);
+  border-top: 0;
+}
+
+.section-head {
+  max-width: none;
+  margin: 0 0 1.5rem;
+  display: grid;
+  justify-items: center;
+  gap: 0.75rem;
+  text-align: center;
+}
+
+.section-head p {
+  max-width: none;
+  color: var(--text-secondary);
+  font-size: 15px;
+  line-height: 1.7;
+  text-align: justify;
+  text-wrap: pretty;
+  margin: 0;
+}
+
+.main-content .section p {
+  text-align: justify;
+}
+
+/* ── Hero overrides ───────────────────────────────────────────────────── */
+
+.hero-flow {
+  margin-bottom: 4px;
+}
+
+.hero-actions {
+  flex-wrap: wrap;
+}
+
+.hero-actions .cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.hero-conference-badge {
+  display: flex;
+  justify-content: center;
+  margin: 2px 0 10px;
+}
+
+.hero-conference-badge .interactive-badge--conference {
+  margin-left: 0;
+  top: 0;
+  padding: 7px 18px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #8a4f00;
+  background:
+    linear-gradient(135deg, rgba(255, 246, 214, 0.96), rgba(255, 184, 74, 0.28)),
+    rgba(212, 148, 10, 0.16);
+  border-color: rgba(212, 148, 10, 0.5);
+  box-shadow:
+    0 10px 28px rgba(212, 148, 10, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+/* ── Scroll-reveal ────────────────────────────────────────────────────── */
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 560ms ease, transform 560ms ease;
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Placeholder boxes ────────────────────────────────────────────────── */
+
+.placeholder-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 280px;
+  border-radius: 14px;
+  border: 2px dashed var(--border-light);
+  background: var(--bg-elevated);
+  color: var(--text-muted);
+  font-family: 'Fira Code', monospace;
+  font-size: 13px;
+  letter-spacing: 0.03em;
+}
+
+.video-placeholder-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 14px;
+  border: 2px dashed var(--border-light);
+  background: var(--bg-elevated);
+  color: var(--text-muted);
+  font-family: 'Fira Code', monospace;
+  font-size: 13px;
+  letter-spacing: 0.03em;
+}
+
+/* ── Footer / BibTeX ──────────────────────────────────────────────────── */
+
+.site-footer {
+  background: transparent;
+  color: var(--text-muted);
+  padding: 0;
+  margin-top: 0;
+  border-top: 0;
+  text-align: center;
+}
+
+.site-footer .bibtex-code,
+.site-footer .citation-block {
+  text-align: left;
+}
+
+.bibtex-code {
+  margin: 0 auto;
+  max-width: none;
+  box-shadow: var(--shadow-sm);
+}
+
+.bibtex-code pre,
+.citation-block,
+.citation-block code {
+  font-family: 'Fira Code', monospace;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.citation-block {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.footer {
+  margin-top: 36px;
+}
+
+/* ── Accessibility ────────────────────────────────────────────────────── */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── Responsive ───────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  body {
+    padding: 16px 10px;
+  }
+
+  .main-content .section-card,
+  .main-content .section {
+    padding: 16px;
+  }
+
+  .placeholder-box,
+  .video-placeholder-box {
+    min-height: 180px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .placeholder-box,
+  .video-placeholder-box {
+    min-height: 140px;
+    font-size: 11px;
+  }
+}

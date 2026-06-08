@@ -1,42 +1,174 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>RARM: Confidence-Gated Progress Reward Modeling for RL in Manipulation</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <main>
-    <header class="hero">
-      <h1>RARM: Confidence-Gated Progress Reward Modeling for RL in Manipulation</h1>
-      <p class="venue">Anonymous submission &middot; Under review</p>
-      <!-- Author block intentionally omitted for double-blind review -->
-    </header>
- 
-    <!-- Fill in sections below as needed. Remove anything you don't use. -->
- 
-    <section id="abstract">
-      <h2>Abstract</h2>
-      <p>Abstract text placeholder.</p>
-    </section>
- 
-    <!--
-    <section id="links">
-      <a href="#">Paper</a>
-      <a href="#">Code</a>
-      <a href="#">Video</a>
-    </section>
- 
-    <section id="bibtex">
-      <h2>BibTeX</h2>
-      <pre><code>@inproceedings{anonymous2026,
-  title  = {PAPER TITLE PLACEHOLDER},
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RARM: Confidence-Gated Progress Reward Modeling for RL in Manipulation</title>
+    <meta
+      name="description"
+      content="RARM: Confidence-Gated Progress Reward Modeling for RL in Manipulation. Anonymous submission under review at CoRL 2026."
+    />
+    <link rel="stylesheet" href="css/omnireset-theme.css" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#motivation">Skip to content</a>
+
+    <nav class="progress-sidebar" aria-label="Page progress">
+      <div class="progress-track">
+        <div class="progress-line"></div>
+        <div class="progress-line-fill"></div>
+        <div class="progress-item" data-section="top">
+          <a href="#top" data-nav="top">
+            <span class="progress-dot"></span>
+            <span class="progress-label">Intro</span>
+          </a>
+        </div>
+        <div class="progress-item" data-section="motivation">
+          <a href="#motivation" data-nav="motivation">
+            <span class="progress-dot"></span>
+            <span class="progress-label">Motivation</span>
+          </a>
+        </div>
+        <div class="progress-item" data-section="method">
+          <a href="#method" data-nav="method">
+            <span class="progress-dot"></span>
+            <span class="progress-label">Method</span>
+          </a>
+        </div>
+        <div class="progress-item" data-section="simulation">
+          <a href="#simulation" data-nav="simulation">
+            <span class="progress-dot"></span>
+            <span class="progress-label">Simulation Experiments</span>
+          </a>
+        </div>
+        <div class="progress-item" data-section="realworld">
+          <a href="#realworld" data-nav="realworld">
+            <span class="progress-dot"></span>
+            <span class="progress-label">Real-World Experiments</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="main-content">
+
+      <!-- ── Hero ─────────────────────────────────────────────────────── -->
+      <section id="top" class="hero-flow" aria-labelledby="hero-title">
+        <div class="hero-orb" aria-hidden="true"></div>
+
+        <h1 id="hero-title" class="hero-text">RARM</h1>
+        <p class="sub-hero-text">
+          Confidence-Gated Progress Reward Modeling for RL in Manipulation
+        </p>
+
+        <div class="authors">
+          <span class="affiliation">Anonymous submission &middot; Under review</span>
+        </div>
+
+        <div class="hero-conference-badge">
+          <span class="interactive-badge interactive-badge--conference">CoRL 2026 &middot; Under Review</span>
+        </div>
+
+        <div class="hero-waves" aria-hidden="true">
+          <svg
+            class="waves-svg"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28"
+            preserveAspectRatio="none"
+            shape-rendering="auto"
+          >
+            <defs>
+              <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+            </defs>
+            <g class="wave-parallax">
+              <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(212,148,10,0.25)"></use>
+              <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(147,51,234,0.2)"></use>
+              <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(59,130,246,0.18)"></use>
+              <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(37,99,235,0.25)"></use>
+            </g>
+          </svg>
+        </div>
+      </section>
+
+      <!-- ── Motivation ────────────────────────────────────────────────── -->
+      <div class="tagline" id="motivation">Motivation</div>
+      <section class="section section-motivation card-surface section-card" aria-labelledby="motivation-title">
+        <div class="section-head" data-reveal>
+          <h2 id="motivation-title" class="visually-hidden">Motivation</h2>
+          <p>Video overview placeholder.</p>
+        </div>
+        <div class="video-placeholder" data-reveal>
+          <div class="video-placeholder-box">
+            <span>Video</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Method ────────────────────────────────────────────────────── -->
+      <div class="tagline" id="method">Method</div>
+      <section class="section section-method card-surface section-card" aria-labelledby="method-title">
+        <div class="section-head" data-reveal>
+          <h2 id="method-title" class="visually-hidden">Method</h2>
+          <p>Method description placeholder.</p>
+        </div>
+        <div class="content-placeholder" data-reveal>
+          <div class="placeholder-box">
+            <span>Method figure</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Simulation Experiments ─────────────────────────────────────── -->
+      <div class="tagline" id="simulation">Simulation Experiments</div>
+      <section class="section section-simulation card-surface section-card" aria-labelledby="simulation-title">
+        <div class="section-head" data-reveal>
+          <h2 id="simulation-title" class="visually-hidden">Simulation Experiments</h2>
+          <p>Simulation experiments placeholder.</p>
+        </div>
+        <div class="content-placeholder" data-reveal>
+          <div class="placeholder-box">
+            <span>Simulation results</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Real-World Experiments ─────────────────────────────────────── -->
+      <div class="tagline" id="realworld">Real-World Experiments</div>
+      <section class="section section-realworld card-surface section-card" aria-labelledby="realworld-title">
+        <div class="section-head" data-reveal>
+          <h2 id="realworld-title" class="visually-hidden">Real-World Experiments</h2>
+          <p>Real-world experiments placeholder.</p>
+        </div>
+        <div class="content-placeholder" data-reveal>
+          <div class="placeholder-box">
+            <span>Real-world results</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── BibTeX ─────────────────────────────────────────────────────── -->
+      <div id="paper" class="tagline">BibTeX</div>
+      <footer class="site-footer">
+        <div class="bibtex-code">
+          <pre class="citation-block"><code>@inproceedings{anonymous2026rarm,
+  title  = {RARM: Confidence-Gated Progress Reward Modeling for RL in Manipulation},
   author = {Anonymous},
   year   = {2026}
 }</code></pre>
-    </section>
-    -->
-  </main>
-</body>
+        </div>
+      </footer>
+
+    </main>
+
+    <div class="footer">
+      Website template adapted from
+      <a href="https://sim-dist.github.io/" target="_blank" rel="noreferrer">SimDist</a>,
+      which was adapted from
+      <a href="https://omnireset.github.io/" target="_blank" rel="noreferrer">OmniReset</a>.
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
 </html>
