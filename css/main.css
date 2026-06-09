@@ -193,6 +193,142 @@ a {
   letter-spacing: 0.03em;
 }
 
+/* ── Real-world section subtitle ─────────────────────────────────────── */
+
+.rw-subtitle {
+  font-family: 'Space Grotesk', -apple-system, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 4px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+/* ── Results table ────────────────────────────────────────────────────── */
+
+.results-table-wrap {
+  margin-top: 36px;
+  width: 100%;
+}
+
+.results-table-caption {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  text-align: center;
+  margin: 0 auto 20px;
+  max-width: 720px;
+}
+
+.results-table-scroll {
+  overflow-x: auto;
+  border-radius: 14px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-sm);
+}
+
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 14px;
+  color: var(--text-primary);
+  background: var(--bg-surface);
+  border-radius: 14px;
+  overflow: hidden;
+  min-width: 560px;
+}
+
+.results-table thead tr:first-child th {
+  background: var(--bg-elevated);
+  font-family: 'Space Grotesk', -apple-system, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border-light);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.results-table thead tr:last-child th {
+  background: var(--bg-elevated);
+  font-family: 'Space Grotesk', -apple-system, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 8px 14px 10px;
+  border-bottom: 2px solid var(--border-light);
+  text-align: center;
+}
+
+.results-table th.col-group {
+  border-left: 1px solid var(--border-subtle);
+  border-right: 1px solid var(--border-subtle);
+}
+
+.results-table th.col-ours {
+  color: var(--honey-bronze);
+}
+
+.results-table tbody tr {
+  border-bottom: 1px solid var(--border-subtle);
+  transition: background 0.18s ease;
+  cursor: default;
+}
+
+.results-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.results-table tbody tr:hover {
+  background: rgba(212, 148, 10, 0.07);
+}
+
+.results-table tbody td {
+  padding: 11px 14px;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 13.5px;
+}
+
+.results-table tbody td.col-task {
+  text-align: left;
+  font-weight: 500;
+  color: var(--text-primary);
+  font-size: 13.5px;
+  white-space: nowrap;
+}
+
+.results-table tbody td.best {
+  font-weight: 700;
+  color: var(--honey-bronze);
+}
+
+.results-table th.col-binr,
+.results-table td:nth-child(3),
+.results-table td:nth-child(5),
+.results-table td:nth-child(7) {
+  border-left: 1px solid var(--border-subtle);
+}
+
+@media (max-width: 768px) {
+  .results-table {
+    font-size: 12px;
+  }
+
+  .results-table tbody td,
+  .results-table tbody td.col-task {
+    font-size: 12px;
+    padding: 9px 10px;
+  }
+}
+
 /* ── Footer / BibTeX ──────────────────────────────────────────────────── */
 
 .site-footer {
