@@ -199,6 +199,20 @@ a {
   letter-spacing: 0.03em;
 }
 
+/* ── Hero logo ────────────────────────────────────────────────────────── */
+
+.hero-logo {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  margin-right: 0.15em;
+  margin-bottom: 0.1em;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
 /* ── Sub-section title (shared across all sections) ──────────────────── */
 
 .sub-title,
