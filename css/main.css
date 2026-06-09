@@ -518,11 +518,11 @@ a {
 .results-table tr.our-row td {
   background: rgba(212, 148, 10, 0.07);
   color: var(--text-primary);
-  font-weight: 600;
 }
 
 .results-table tr.our-row td.col-task {
   color: var(--honey-bronze);
+  font-weight: 600;
 }
 
 /* ── Footer / BibTeX ──────────────────────────────────────────────────── */
