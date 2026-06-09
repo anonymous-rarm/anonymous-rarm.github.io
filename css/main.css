@@ -123,12 +123,18 @@ a {
 
 .improvement-stack {
   display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
   margin: 0;
   width: 100%;
   min-width: 0;
   overflow: hidden;
-  justify-items: center;
+}
+
+@media (max-width: 600px) {
+  .improvement-stack {
+    grid-template-columns: 1fr;
+  }
 }
 
 .improvement-item {
