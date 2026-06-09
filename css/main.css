@@ -199,16 +199,146 @@ a {
   letter-spacing: 0.03em;
 }
 
-/* ── Real-world section subtitle ─────────────────────────────────────── */
+/* ── Sub-section title (shared across all sections) ──────────────────── */
 
+.sub-title,
 .rw-subtitle {
   font-family: 'Space Grotesk', -apple-system, sans-serif;
   font-size: 18px;
   font-weight: 600;
   color: var(--text-primary);
-  margin: 0 0 4px;
+  margin: 0 0 20px;
   line-height: 1.2;
   text-align: center;
+}
+
+/* ── Robustness section ───────────────────────────────────────────────── */
+
+.robustness-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 28px;
+}
+
+.robustness-ref-label {
+  font-family: 'Space Grotesk', -apple-system, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.ref-strip {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+.ref-frame {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.ref-frame img {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-sm);
+}
+
+.ref-frame figcaption {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1.4;
+}
+
+.aug-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.aug-row {
+  display: grid;
+  grid-template-columns: 160px 1fr 1.6fr;
+  gap: 14px;
+  align-items: center;
+  background: var(--bg-elevated);
+  border-radius: 14px;
+  padding: 16px;
+  border: 1px solid var(--border-subtle);
+}
+
+.aug-label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.aug-label strong {
+  font-family: 'Space Grotesk', -apple-system, sans-serif;
+  font-size: 13px;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.aug-label span {
+  font-size: 11.5px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.aug-frames {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.aug-frames img {
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: none;
+}
+
+.aug-heatmap img {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-sm);
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .ref-strip {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .ref-strip .ref-frame:nth-child(4),
+  .ref-strip .ref-frame:nth-child(5) {
+    display: none;
+  }
+
+  .aug-row {
+    grid-template-columns: 1fr;
+  }
+
+  .aug-label {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 8px;
+  }
 }
 
 /* ── Results table ────────────────────────────────────────────────────── */
@@ -333,6 +463,30 @@ a {
     font-size: 12px;
     padding: 9px 10px;
   }
+}
+
+/* ── Performance table ────────────────────────────────────────────────── */
+
+.perf-table {
+  min-width: 320px;
+}
+
+.perf-table thead th {
+  text-align: center;
+}
+
+.perf-table thead th.col-task {
+  text-align: left;
+}
+
+.results-table tr.our-row td {
+  background: rgba(212, 148, 10, 0.07);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.results-table tr.our-row td.col-task {
+  color: var(--honey-bronze);
 }
 
 /* ── Footer / BibTeX ──────────────────────────────────────────────────── */

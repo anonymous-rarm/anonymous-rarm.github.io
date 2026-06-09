@@ -19,34 +19,22 @@
         <div class="progress-line"></div>
         <div class="progress-line-fill"></div>
         <div class="progress-item" data-section="top">
-          <a href="#top" data-nav="top">
-            <span class="progress-dot"></span>
-            <span class="progress-label">Intro</span>
-          </a>
+          <a href="#top" data-nav="top"><span class="progress-dot"></span><span class="progress-label">Intro</span></a>
         </div>
         <div class="progress-item" data-section="motivation">
-          <a href="#motivation" data-nav="motivation">
-            <span class="progress-dot"></span>
-            <span class="progress-label">Motivation</span>
-          </a>
+          <a href="#motivation" data-nav="motivation"><span class="progress-dot"></span><span class="progress-label">Motivation</span></a>
         </div>
         <div class="progress-item" data-section="method">
-          <a href="#method" data-nav="method">
-            <span class="progress-dot"></span>
-            <span class="progress-label">Method</span>
-          </a>
+          <a href="#method" data-nav="method"><span class="progress-dot"></span><span class="progress-label">Method</span></a>
         </div>
         <div class="progress-item" data-section="simulation">
-          <a href="#simulation" data-nav="simulation">
-            <span class="progress-dot"></span>
-            <span class="progress-label">Simulation Experiments</span>
-          </a>
+          <a href="#simulation" data-nav="simulation"><span class="progress-dot"></span><span class="progress-label">Simulation Experiments</span></a>
         </div>
         <div class="progress-item" data-section="realworld">
-          <a href="#realworld" data-nav="realworld">
-            <span class="progress-dot"></span>
-            <span class="progress-label">Real-World Experiments</span>
-          </a>
+          <a href="#realworld" data-nav="realworld"><span class="progress-dot"></span><span class="progress-label">Real-World Experiments</span></a>
+        </div>
+        <div class="progress-item" data-section="performance">
+          <a href="#performance" data-nav="performance"><span class="progress-dot"></span><span class="progress-label">Performance</span></a>
         </div>
       </div>
     </nav>
@@ -56,32 +44,18 @@
       <!-- ── Hero ─────────────────────────────────────────────────────── -->
       <section id="top" class="hero-flow" aria-labelledby="hero-title">
         <div class="hero-orb" aria-hidden="true"></div>
-
         <h1 id="hero-title" class="hero-text">RARM</h1>
-        <p class="sub-hero-text">
-          Confidence-Gated Progress Reward Modeling for RL in Manipulation
-        </p>
-
+        <p class="sub-hero-text">Confidence-Gated Progress Reward Modeling for RL in Manipulation</p>
         <div class="authors">
           <span class="affiliation">Anonymous submission &middot; Under review</span>
         </div>
-
         <div class="hero-conference-badge">
           <span class="interactive-badge interactive-badge--conference">CoRL 2026 &middot; Under Review</span>
         </div>
-
         <div class="hero-waves" aria-hidden="true">
-          <svg
-            class="waves-svg"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            viewBox="0 24 150 28"
-            preserveAspectRatio="none"
-            shape-rendering="auto"
-          >
-            <defs>
-              <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
-            </defs>
+          <svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path></defs>
             <g class="wave-parallax">
               <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(212,148,10,0.25)"></use>
               <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(147,51,234,0.2)"></use>
@@ -100,9 +74,7 @@
           <p>Video overview placeholder.</p>
         </div>
         <div class="video-placeholder" data-reveal>
-          <div class="video-placeholder-box">
-            <span>Video</span>
-          </div>
+          <div class="video-placeholder-box"><span>Video</span></div>
         </div>
       </section>
 
@@ -114,33 +86,47 @@
           <p>Method description placeholder.</p>
         </div>
         <div class="content-placeholder" data-reveal>
-          <div class="placeholder-box">
-            <span>Method figure</span>
-          </div>
+          <div class="placeholder-box"><span>Method figure</span></div>
         </div>
       </section>
 
       <!-- ── Simulation Experiments ─────────────────────────────────────── -->
       <div class="tagline" id="simulation">Simulation Experiments</div>
-      <section class="section section-simulation card-surface section-card" aria-labelledby="simulation-title">
-        <div class="section-head" data-reveal>
-          <h2 id="simulation-title" class="visually-hidden">Simulation Experiments</h2>
-          <p>Simulation experiments placeholder.</p>
-        </div>
+
+      <section class="section section-simulation card-surface section-card" aria-label="Qualitative comparisons">
+        <h3 class="sub-title" data-reveal>Qualitative Comparisons</h3>
         <div class="content-placeholder" data-reveal>
-          <div class="placeholder-box">
-            <span>Simulation results</span>
-          </div>
+          <div class="placeholder-box"><span>Qualitative comparison figures</span></div>
+        </div>
+      </section>
+
+      <section class="section section-simulation card-surface section-card" aria-label="Quantitative experiments">
+        <h3 class="sub-title" data-reveal>Quantitative Experiments</h3>
+        <div class="content-placeholder" data-reveal>
+          <div class="placeholder-box"><span>Quantitative results</span></div>
+        </div>
+      </section>
+
+      <section class="section section-simulation card-surface section-card" aria-label="Ablation">
+        <h3 class="sub-title" data-reveal>Ablation</h3>
+        <div class="content-placeholder" data-reveal>
+          <div class="placeholder-box"><span>Ablation results</span></div>
+        </div>
+      </section>
+
+      <section class="section section-simulation card-surface section-card" aria-label="Additional experiment with world model">
+        <h3 class="sub-title" data-reveal>Additional Experiment with World Model</h3>
+        <div class="content-placeholder" data-reveal>
+          <div class="placeholder-box"><span>World model experiment results</span></div>
         </div>
       </section>
 
       <!-- ── Real-World Experiments ─────────────────────────────────────── -->
       <div class="tagline" id="realworld">Real-World Experiments</div>
-      <section class="section section-realworld card-surface section-card" aria-labelledby="realworld-title">
-        <div class="section-head" data-reveal>
-          <h2 id="realworld-title" class="visually-hidden">Real-World Experiments</h2>
-          <h3 class="rw-subtitle">DSRL with RARM</h3>
-        </div>
+
+      <!-- Sub-section: DSRL with RARM -->
+      <section class="section section-realworld card-surface section-card" aria-label="DSRL with RARM">
+        <h3 class="sub-title" data-reveal>DSRL with RARM</h3>
         <div class="improvement-stack" data-reveal>
           <figure class="improvement-item">
             <figcaption class="improvement-video-title">Drawer Opening</figcaption>
@@ -166,7 +152,6 @@
             <strong>w/o DSRL:</strong> base VLA policy.
             <strong>BinR:</strong> DSRL with sparse binary success reward.
             <strong>Ours:</strong> DSRL with the proposed RARM reward.
-            Bold indicates the better result at each training budget.
           </p>
           <div class="results-table-scroll">
             <table class="results-table" aria-label="Real-world success rates">
@@ -212,6 +197,157 @@
                   <td>0/10</td><td class="best">1/10</td>
                   <td>1/10</td><td class="best">3/10</td>
                   <td>2/10</td><td class="best">8/10</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sub-section: Robustness for RARM -->
+      <section class="section section-realworld card-surface section-card" aria-label="Robustness for RARM">
+        <h3 class="sub-title" data-reveal>Robustness for RARM</h3>
+        <p class="robustness-desc" data-reveal>
+          RARM produces stable progress estimates under diverse visual perturbations.
+          Starting from a successful bimanual clothes-folding rollout, we apply four augmentations
+          targeting distinct real-world failure modes and re-estimate progress against an unaltered reference.
+          In all cases the estimated progress closely tracks the ideal linear trend.
+        </p>
+
+        <!-- Reference demonstration strip -->
+        <div class="robustness-ref-label" data-reveal>Reference Demonstration — Task 4: Bimanual Clothes Folding</div>
+        <div class="ref-strip" data-reveal>
+          <figure class="ref-frame">
+            <img src="assets/figures/robustness/frame_0001.jpg" alt="Flat orange shirt" loading="lazy" />
+            <figcaption>Flat orange<br>shirt</figcaption>
+          </figure>
+          <figure class="ref-frame">
+            <img src="assets/figures/robustness/frame_0007.jpg" alt="Bimanual first fold" loading="lazy" />
+            <figcaption>Bimanual<br>first fold</figcaption>
+          </figure>
+          <figure class="ref-frame">
+            <img src="assets/figures/robustness/frame_0016.jpg" alt="Cooperative 45° rotation" loading="lazy" />
+            <figcaption>Cooperative<br>45° rotation</figcaption>
+          </figure>
+          <figure class="ref-frame">
+            <img src="assets/figures/robustness/frame_0023.jpg" alt="Left pinches near side" loading="lazy" />
+            <figcaption>Left pinches<br>near side</figcaption>
+          </figure>
+          <figure class="ref-frame">
+            <img src="assets/figures/robustness/frame_0031.jpg" alt="Final folded shape" loading="lazy" />
+            <figcaption>Final folded<br>shape</figcaption>
+          </figure>
+        </div>
+
+        <!-- Augmentation rows -->
+        <div class="aug-grid" data-reveal>
+
+          <div class="aug-row">
+            <div class="aug-label"><strong>Augment 1 — Glare</strong><span>blinding white spots</span></div>
+            <div class="aug-frames">
+              <img src="assets/figures/robustness/frame_0001_aug1.jpg" alt="Glare aug frame 1" loading="lazy" />
+              <img src="assets/figures/robustness/frame_0016_aug1.jpg" alt="Glare aug frame 16" loading="lazy" />
+              <img src="assets/figures/robustness/frame_0031_aug1.jpg" alt="Glare aug frame 31" loading="lazy" />
+            </div>
+            <div class="aug-heatmap">
+              <img src="assets/figures/robustness/heatmap_1_frames_aug1_progress.png" alt="Progress estimate under glare augmentation" loading="lazy" />
+            </div>
+          </div>
+
+          <div class="aug-row">
+            <div class="aug-label"><strong>Augment 2 — Color Shift</strong><span>green filter</span></div>
+            <div class="aug-frames">
+              <img src="assets/figures/robustness/frame_0001_aug2.jpg" alt="Color shift aug frame 1" loading="lazy" />
+              <img src="assets/figures/robustness/frame_0016_aug2.jpg" alt="Color shift aug frame 16" loading="lazy" />
+              <img src="assets/figures/robustness/frame_0031_aug2.jpg" alt="Color shift aug frame 31" loading="lazy" />
+            </div>
+            <div class="aug-heatmap">
+              <img src="assets/figures/robustness/heatmap_1_frames_aug2_progress.png" alt="Progress estimate under color shift augmentation" loading="lazy" />
+            </div>
+          </div>
+
+          <div class="aug-row">
+            <div class="aug-label"><strong>Augment 3 — Occlusion</strong><span>black box overlay</span></div>
+            <div class="aug-frames">
+              <img src="assets/figures/robustness/frame_0001_aug3.jpg" alt="Occlusion aug frame 1" loading="lazy" />
+              <img src="assets/figures/robustness/frame_0016_aug3.jpg" alt="Occlusion aug frame 16" loading="lazy" />
+              <img src="assets/figures/robustness/frame_0031_aug3.jpg" alt="Occlusion aug frame 31" loading="lazy" />
+            </div>
+            <div class="aug-heatmap">
+              <img src="assets/figures/robustness/heatmap_1_frames_aug3_progress.png" alt="Progress estimate under occlusion augmentation" loading="lazy" />
+            </div>
+          </div>
+
+          <div class="aug-row">
+            <div class="aug-label"><strong>Augment 4 — Viewpoint</strong><span>perspective pitch &amp; yaw</span></div>
+            <div class="aug-frames">
+              <img src="assets/figures/robustness/frame_0001_aug4.jpg" alt="Viewpoint aug frame 1" loading="lazy" />
+              <img src="assets/figures/robustness/frame_0016_aug4.jpg" alt="Viewpoint aug frame 16" loading="lazy" />
+              <img src="assets/figures/robustness/frame_0031_aug4.jpg" alt="Viewpoint aug frame 31" loading="lazy" />
+            </div>
+            <div class="aug-heatmap">
+              <img src="assets/figures/robustness/heatmap_1_frames_aug4_progress.png" alt="Progress estimate under viewpoint augmentation" loading="lazy" />
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── Performance ────────────────────────────────────────────────── -->
+      <div class="tagline" id="performance">Performance</div>
+
+      <section class="section section-performance card-surface section-card" aria-label="Inference speed and GPU cost">
+        <h3 class="sub-title" data-reveal>Inference Speed and GPU Cost</h3>
+        <div class="results-table-wrap" data-reveal>
+          <p class="results-table-caption">
+            Per-frame inference cost and peak GPU memory across reward model baselines,
+            measured over 125 frames (one rollout trajectory).
+            RARM matches the fastest vision-encoder baselines while using far less memory than VLM-based methods.
+          </p>
+          <div class="results-table-scroll">
+            <table class="results-table perf-table" aria-label="Inference cost comparison">
+              <thead>
+                <tr>
+                  <th class="col-task">Baseline</th>
+                  <th>ms / frame</th>
+                  <th>Mem (MB)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="col-task">GVL</td>
+                  <td>&lt;50</td>
+                  <td>13 200</td>
+                </tr>
+                <tr>
+                  <td class="col-task">Robometer</td>
+                  <td>&lt;100</td>
+                  <td>13 200</td>
+                </tr>
+                <tr>
+                  <td class="col-task">RoboDopamine</td>
+                  <td>&lt;300</td>
+                  <td>19 000</td>
+                </tr>
+                <tr>
+                  <td class="col-task">VIP</td>
+                  <td>&lt;10</td>
+                  <td>4 200</td>
+                </tr>
+                <tr>
+                  <td class="col-task">RoboCLIP</td>
+                  <td>&lt;10</td>
+                  <td>5 400</td>
+                </tr>
+                <tr>
+                  <td class="col-task">TemporalOT</td>
+                  <td>&lt;10</td>
+                  <td>6 600</td>
+                </tr>
+                <tr class="our-row">
+                  <td class="col-task">RARM (Ours)</td>
+                  <td><strong>&lt;10</strong></td>
+                  <td><strong>5 100</strong></td>
                 </tr>
               </tbody>
             </table>
