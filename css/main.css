@@ -125,12 +125,15 @@ a {
   display: grid;
   gap: 24px;
   margin: 0;
+  width: 100%;
   min-width: 0;
+  overflow: hidden;
   justify-items: center;
 }
 
 .improvement-item {
   width: 100%;
+  min-width: 0;
   margin: 0;
   display: grid;
   justify-items: center;
@@ -143,17 +146,19 @@ a {
   font-weight: 600;
   color: var(--text-primary);
   margin: 0;
-  width: min(620px, 100%);
+  max-width: 100%;
   line-height: 1.1;
   text-align: center;
 }
 
 .improvement-stack video {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
   aspect-ratio: 16 / 9;
-  width: min(725px, 100%);
   object-fit: contain;
   border-radius: 18px;
-  overflow: hidden;
 }
 
 /* ── Placeholder boxes ────────────────────────────────────────────────── */
