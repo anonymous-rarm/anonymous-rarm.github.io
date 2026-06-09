@@ -85,9 +85,9 @@
           <h2 id="method-title" class="visually-hidden">Method</h2>
           <p>Method description placeholder.</p>
         </div>
-        <div class="content-placeholder" data-reveal>
-          <div class="placeholder-box"><span>Method figure</span></div>
-        </div>
+        <figure class="method-figure" data-reveal>
+          <img src="assets/figures/method.png" alt="RARM method overview" loading="lazy" />
+        </figure>
       </section>
 
       <!-- ── Simulation Experiments ─────────────────────────────────────── -->
@@ -124,7 +124,7 @@
       <!-- ── Real-World Experiments ─────────────────────────────────────── -->
       <div class="tagline" id="realworld">Real-World Experiments</div>
 
-      <!-- Sub-section: DSRL with RARM -->
+      <!-- Sub-section: DSRL with RARM (videos) -->
       <section class="section section-realworld card-surface section-card" aria-label="DSRL with RARM">
         <h3 class="sub-title" data-reveal>DSRL with RARM</h3>
         <div class="improvement-stack" data-reveal>
@@ -145,10 +145,14 @@
             <video data-src="assets/video/clothes.mov" autoplay muted loop playsinline preload="none" controls></video>
           </figure>
         </div>
+      </section>
 
+      <!-- Sub-section: Real-World Success Rates (table) -->
+      <section class="section section-realworld card-surface section-card" aria-label="Real-world success rates">
+        <h3 class="sub-title" data-reveal>Real-World Success Rates</h3>
         <div class="results-table-wrap" data-reveal>
           <p class="results-table-caption">
-            Real-world success rates over 10 evaluation rollouts before and after 30/60/90 DSRL training episodes.
+            Success rates over 10 evaluation rollouts before and after 30/60/90 DSRL training episodes.
             <strong>w/o DSRL:</strong> base VLA policy.
             <strong>BinR:</strong> DSRL with sparse binary success reward.
             <strong>Ours:</strong> DSRL with the proposed RARM reward.
@@ -243,11 +247,13 @@
         <div class="aug-grid" data-reveal>
 
           <div class="aug-row">
-            <div class="aug-label"><strong>Augment 1 — Glare</strong><span>blinding white spots</span></div>
-            <div class="aug-frames">
-              <img src="assets/figures/robustness/frame_0001_aug1.jpg" alt="Glare aug frame 1" loading="lazy" />
-              <img src="assets/figures/robustness/frame_0016_aug1.jpg" alt="Glare aug frame 16" loading="lazy" />
-              <img src="assets/figures/robustness/frame_0031_aug1.jpg" alt="Glare aug frame 31" loading="lazy" />
+            <div class="aug-left">
+              <div class="aug-label"><strong>Augment 1 — Glare</strong><span>blinding white spots</span></div>
+              <div class="aug-frames">
+                <img src="assets/figures/robustness/frame_0001_aug1.jpg" alt="Glare aug frame 1" loading="lazy" />
+                <img src="assets/figures/robustness/frame_0016_aug1.jpg" alt="Glare aug frame 16" loading="lazy" />
+                <img src="assets/figures/robustness/frame_0031_aug1.jpg" alt="Glare aug frame 31" loading="lazy" />
+              </div>
             </div>
             <div class="aug-heatmap">
               <img src="assets/figures/robustness/heatmap_1_frames_aug1_progress.png" alt="Progress estimate under glare augmentation" loading="lazy" />
@@ -255,11 +261,13 @@
           </div>
 
           <div class="aug-row">
-            <div class="aug-label"><strong>Augment 2 — Color Shift</strong><span>green filter</span></div>
-            <div class="aug-frames">
-              <img src="assets/figures/robustness/frame_0001_aug2.jpg" alt="Color shift aug frame 1" loading="lazy" />
-              <img src="assets/figures/robustness/frame_0016_aug2.jpg" alt="Color shift aug frame 16" loading="lazy" />
-              <img src="assets/figures/robustness/frame_0031_aug2.jpg" alt="Color shift aug frame 31" loading="lazy" />
+            <div class="aug-left">
+              <div class="aug-label"><strong>Augment 2 — Color Shift</strong><span>green filter</span></div>
+              <div class="aug-frames">
+                <img src="assets/figures/robustness/frame_0001_aug2.jpg" alt="Color shift aug frame 1" loading="lazy" />
+                <img src="assets/figures/robustness/frame_0016_aug2.jpg" alt="Color shift aug frame 16" loading="lazy" />
+                <img src="assets/figures/robustness/frame_0031_aug2.jpg" alt="Color shift aug frame 31" loading="lazy" />
+              </div>
             </div>
             <div class="aug-heatmap">
               <img src="assets/figures/robustness/heatmap_1_frames_aug2_progress.png" alt="Progress estimate under color shift augmentation" loading="lazy" />
@@ -267,11 +275,13 @@
           </div>
 
           <div class="aug-row">
-            <div class="aug-label"><strong>Augment 3 — Occlusion</strong><span>black box overlay</span></div>
-            <div class="aug-frames">
-              <img src="assets/figures/robustness/frame_0001_aug3.jpg" alt="Occlusion aug frame 1" loading="lazy" />
-              <img src="assets/figures/robustness/frame_0016_aug3.jpg" alt="Occlusion aug frame 16" loading="lazy" />
-              <img src="assets/figures/robustness/frame_0031_aug3.jpg" alt="Occlusion aug frame 31" loading="lazy" />
+            <div class="aug-left">
+              <div class="aug-label"><strong>Augment 3 — Occlusion</strong><span>black box overlay</span></div>
+              <div class="aug-frames">
+                <img src="assets/figures/robustness/frame_0001_aug3.jpg" alt="Occlusion aug frame 1" loading="lazy" />
+                <img src="assets/figures/robustness/frame_0016_aug3.jpg" alt="Occlusion aug frame 16" loading="lazy" />
+                <img src="assets/figures/robustness/frame_0031_aug3.jpg" alt="Occlusion aug frame 31" loading="lazy" />
+              </div>
             </div>
             <div class="aug-heatmap">
               <img src="assets/figures/robustness/heatmap_1_frames_aug3_progress.png" alt="Progress estimate under occlusion augmentation" loading="lazy" />
@@ -279,11 +289,13 @@
           </div>
 
           <div class="aug-row">
-            <div class="aug-label"><strong>Augment 4 — Viewpoint</strong><span>perspective pitch &amp; yaw</span></div>
-            <div class="aug-frames">
-              <img src="assets/figures/robustness/frame_0001_aug4.jpg" alt="Viewpoint aug frame 1" loading="lazy" />
-              <img src="assets/figures/robustness/frame_0016_aug4.jpg" alt="Viewpoint aug frame 16" loading="lazy" />
-              <img src="assets/figures/robustness/frame_0031_aug4.jpg" alt="Viewpoint aug frame 31" loading="lazy" />
+            <div class="aug-left">
+              <div class="aug-label"><strong>Augment 4 — Viewpoint</strong><span>perspective pitch &amp; yaw</span></div>
+              <div class="aug-frames">
+                <img src="assets/figures/robustness/frame_0001_aug4.jpg" alt="Viewpoint aug frame 1" loading="lazy" />
+                <img src="assets/figures/robustness/frame_0016_aug4.jpg" alt="Viewpoint aug frame 16" loading="lazy" />
+                <img src="assets/figures/robustness/frame_0031_aug4.jpg" alt="Viewpoint aug frame 31" loading="lazy" />
+              </div>
             </div>
             <div class="aug-heatmap">
               <img src="assets/figures/robustness/heatmap_1_frames_aug4_progress.png" alt="Progress estimate under viewpoint augmentation" loading="lazy" />

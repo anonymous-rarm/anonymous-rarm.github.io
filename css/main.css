@@ -212,6 +212,19 @@ a {
   text-align: center;
 }
 
+/* ── Method figure ────────────────────────────────────────────────────── */
+
+.method-figure {
+  margin: 0;
+}
+
+.method-figure img {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-md);
+}
+
 /* ── Robustness section ───────────────────────────────────────────────── */
 
 .robustness-desc {
@@ -266,24 +279,31 @@ a {
 .aug-grid {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
 }
 
 .aug-row {
   display: grid;
-  grid-template-columns: 160px 1fr 1.6fr;
+  grid-template-columns: 1.4fr 1fr;
   gap: 14px;
   align-items: center;
   background: var(--bg-elevated);
   border-radius: 14px;
-  padding: 16px;
+  padding: 14px 16px;
   border: 1px solid var(--border-subtle);
+}
+
+.aug-left {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .aug-label {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
+  align-items: baseline;
+  gap: 6px;
+  flex-wrap: wrap;
 }
 
 .aug-label strong {
@@ -332,12 +352,6 @@ a {
 
   .aug-row {
     grid-template-columns: 1fr;
-  }
-
-  .aug-label {
-    flex-direction: row;
-    align-items: baseline;
-    gap: 8px;
   }
 }
 
