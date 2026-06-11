@@ -102,8 +102,19 @@
 
       <section class="section section-simulation card-surface section-card" aria-label="Quantitative experiments">
         <h3 class="sub-title" data-reveal>Quantitative Experiments</h3>
-        <div class="content-placeholder" data-reveal>
-          <div class="placeholder-box"><span>Quantitative results</span></div>
+        <p class="results-caption" data-reveal>
+          Success rate vs. environment steps on MetaWorld and LIBERO-10 tasks
+          (mean &plusmn; std over seeds). Hover the legend to highlight a method;
+          click to toggle it.
+        </p>
+        <div class="results-panel" data-reveal>
+          <div id="results-legend" class="results-legend" aria-label="Method legend"></div>
+          <div id="results-grid" class="results-grid"></div>
+          <img
+            class="results-fallback-img"
+            src="assets/figures/quantitative_results.png"
+            alt="Success-rate curves for RA_RM (ours) and baselines across MetaWorld and LIBERO-10 tasks."
+          />
         </div>
       </section>
 
@@ -389,5 +400,6 @@
     </div>
 
     <script src="js/main.js"></script>
+    <script src="js/results-charts.js"></script>
   </body>
 </html>
