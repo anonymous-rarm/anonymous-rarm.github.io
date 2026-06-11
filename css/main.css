@@ -268,7 +268,7 @@ a {
 
 .ablation-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px;
   align-items: start;
   max-width: 760px;
@@ -277,6 +277,7 @@ a {
 
 .ablation-item {
   margin: 0;
+  min-width: 0;
 }
 
 .ablation-item img {

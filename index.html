@@ -130,12 +130,13 @@
           </figure>
         </div>
         <p class="ablation-desc" data-reveal>
-          Removing any component slows or caps learning. <strong>w/o Cross-Attn</strong> drops
-          the demonstration reference, so progress becomes ungrounded; <strong>w/o Temporal</strong>
-          loses motion cues and rewards static look-alike frames. The confidence gate matters most:
-          <strong>w/o Gate</strong> accepts every noisy match and learns slower, while
-          <strong>Strict Gate</strong> rejects too many frames and starves the policy of reward.
-          The full RARM (blue) is the only variant that converges quickly and reliably to a high success rate.
+          Each variant disables one part of RARM. The full model (blue) reaches a high success rate
+          the fastest and holds it. <strong>w/o Cross-Attn</strong> drops the demonstration reference,
+          so progress is ungrounded; <strong>w/o Temporal</strong> loses motion cues and rewards static
+          frames that merely look like success. The confidence gate is the key factor: without it
+          (<strong>w/o Gate</strong>) noisy frame matches inject spurious reward and convergence slows,
+          while an over-strict gate (<strong>Strict Gate</strong>) rejects too many frames and starves
+          the policy &mdash; both plateau well below RARM.
         </p>
       </section>
 
