@@ -199,6 +199,19 @@ a {
   letter-spacing: 0.03em;
 }
 
+.motivation-video {
+  margin: 0;
+  width: 100%;
+}
+
+.motivation-video video {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 18px;
+}
+
 /* ── Hero logo ────────────────────────────────────────────────────────── */
 
 .hero-logo {
