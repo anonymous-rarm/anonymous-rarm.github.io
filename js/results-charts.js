@@ -19,9 +19,9 @@
     "libero_mug_microwave",
   ];
 
-  // RA_RM (ours) first / most prominent; baselines distinct + muted.
+  // RARM (ours) first / most prominent; baselines distinct + muted.
   const METHOD_COLOR_MAP = {
-    "RA_RM (ours)": "#1f77b4",
+    "RARM (ours)": "#1f77b4",
     RoboCLIP: "#d62728",
     TemporalOT: "#2ca02c",
     GVL: "#9467bd",
@@ -31,7 +31,7 @@
   };
 
   const RESULTS_METHOD_PRIORITY = [
-    "RA_RM (ours)",
+    "RARM (ours)",
     "RoboCLIP",
     "TemporalOT",
     "GVL",
