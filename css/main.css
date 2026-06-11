@@ -264,6 +264,67 @@ a {
   box-shadow: none;
 }
 
+/* ── Ablation figures (two in a row) ──────────────────────────────────── */
+
+.ablation-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  align-items: start;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.ablation-item {
+  margin: 0;
+}
+
+.ablation-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.ablation-item figcaption {
+  margin-top: 8px;
+  font-family: 'Space Grotesk', -apple-system, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.ablation-desc,
+.filmstrip-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  text-align: justify;
+  max-width: 760px;
+  margin: 22px auto 0;
+}
+
+@media (max-width: 600px) {
+  .ablation-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Cloth-folding filmstrip figure ───────────────────────────────────── */
+
+.filmstrip-figure {
+  margin: 0 auto;
+  max-width: 920px;
+}
+
+.filmstrip-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
 /* ── Robustness section ───────────────────────────────────────────────── */
 
 .robustness-desc {

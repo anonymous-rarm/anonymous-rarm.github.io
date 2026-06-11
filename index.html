@@ -35,7 +35,7 @@
           <a href="#realworld" data-nav="realworld"><span class="progress-dot"></span><span class="progress-label">Real-World Experiments</span></a>
         </div>
         <div class="progress-item" data-section="performance">
-          <a href="#performance" data-nav="performance"><span class="progress-dot"></span><span class="progress-label">Performance</span></a>
+          <a href="#performance" data-nav="performance"><span class="progress-dot"></span><span class="progress-label">Computational Cost</span></a>
         </div>
       </div>
     </nav>
@@ -90,12 +90,14 @@
       <!-- ── Simulation Experiments ─────────────────────────────────────── -->
       <div class="tagline" id="simulation">Simulation Experiments</div>
 
+      <!-- Commented out for now
       <section class="section section-simulation card-surface section-card" aria-label="Qualitative comparisons">
         <h3 class="sub-title" data-reveal>Qualitative Comparisons</h3>
         <div class="content-placeholder" data-reveal>
           <div class="placeholder-box"><span>Qualitative comparison figures</span></div>
         </div>
       </section>
+      -->
 
       <section class="section section-simulation card-surface section-card" aria-label="Quantitative experiments">
         <h3 class="sub-title" data-reveal>Quantitative Experiments</h3>
@@ -117,9 +119,24 @@
 
       <section class="section section-simulation card-surface section-card" aria-label="Ablation">
         <h3 class="sub-title" data-reveal>Ablation</h3>
-        <div class="content-placeholder" data-reveal>
-          <div class="placeholder-box"><span>Ablation results</span></div>
+        <div class="ablation-grid" data-reveal>
+          <figure class="ablation-item">
+            <img src="assets/figures/abl_mw18.png" alt="Ablation success-rate curves on a MetaWorld task" loading="lazy" />
+            <figcaption>MetaWorld</figcaption>
+          </figure>
+          <figure class="ablation-item">
+            <img src="assets/figures/abl_lb2.png" alt="Ablation success-rate curves on a LIBERO-10 task" loading="lazy" />
+            <figcaption>LIBERO-10</figcaption>
+          </figure>
         </div>
+        <p class="ablation-desc" data-reveal>
+          Removing any component slows or caps learning. <strong>w/o Cross-Attn</strong> drops
+          the demonstration reference, so progress becomes ungrounded; <strong>w/o Temporal</strong>
+          loses motion cues and rewards static look-alike frames. The confidence gate matters most:
+          <strong>w/o Gate</strong> accepts every noisy match and learns slower, while
+          <strong>Strict Gate</strong> rejects too many frames and starves the policy of reward.
+          The full RARM (blue) is the only variant that converges quickly and reliably to a high success rate.
+        </p>
       </section>
 
       <!-- Commented out for now
@@ -155,6 +172,27 @@
             <video data-src="assets/video/clothes.mov" autoplay muted loop playsinline preload="none" controls></video>
           </figure>
         </div>
+      </section>
+
+      <!-- Sub-section: Progress prediction on cloth folding -->
+      <section class="section section-realworld card-surface section-card" aria-label="Progress prediction on cloth folding tasks">
+        <h3 class="sub-title" data-reveal>Progress Prediction on Cloth Folding</h3>
+        <figure class="filmstrip-figure" data-reveal>
+          <img src="assets/figures/filmstrip_reward.png" alt="Cumulative predicted reward on paired success and failure cloth-folding rollouts." loading="lazy" />
+        </figure>
+        <p class="filmstrip-desc" data-reveal>
+          Cumulative predicted reward on a paired success / failure cloth-folding rollout, normalized
+          per model by its own success-rollout final reward. Reward is accrued only when newly
+          estimated progress exceeds the previous highest estimate, so each curve is
+          <strong>monotonically non-decreasing</strong> &mdash; transient mis-predictions cannot
+          inflate it. Ours (red) tracks the linear oracle on success and saturates at just
+          <strong>0.50</strong> on failure, while every baseline assigns more than 80% of its success
+          reward to the failed rollout (GVL 0.97, Robometer 0.88, RoboDopamine 0.84, VIP 0.82) and
+          cannot separate the two. Removing the per-clip similarity threshold (<em>Ours w/o threshold</em>)
+          accepts every nearest-demo match as confident, and the failure rollout then earns
+          <em>more</em> reward than success (ratio &asymp;&nbsp;1.89) &mdash; confirming that
+          confidence-gated progress estimation is what makes success and failure distinguishable.
+        </p>
       </section>
 
       <!-- Sub-section: Real-World Success Rates (table) -->
@@ -315,8 +353,8 @@
         </div>
       </section>
 
-      <!-- ── Performance ────────────────────────────────────────────────── -->
-      <div class="tagline" id="performance">Performance</div>
+      <!-- ── Computational Cost ─────────────────────────────────────────── -->
+      <div class="tagline" id="performance">Computational Cost</div>
 
       <section class="section section-performance card-surface section-card" aria-label="Inference speed and GPU cost">
         <h3 class="sub-title" data-reveal>Inference Speed and GPU Cost</h3>
