@@ -200,8 +200,9 @@ a {
 }
 
 .motivation-video {
-  margin: 0;
+  margin: 0 auto;
   width: 100%;
+  max-width: 860px;
 }
 
 .motivation-video video {
@@ -209,7 +210,10 @@ a {
   width: 100%;
   max-width: 100%;
   height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
   border-radius: 18px;
+  background: #000;
 }
 
 /* ── Hero logo ────────────────────────────────────────────────────────── */
