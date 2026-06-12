@@ -13,12 +13,30 @@
 (function () {
   "use strict";
 
-  // Tasks to render, in order. Each id maps to assets/qualitative/<id>/<id>.json
-  // with per-rollout-index hover frames under <id>/frames/<series>/NNNN.jpg.
+  // Selectable tasks (dropdown order; first entry is the default). Each id maps
+  // to assets/qualitative/<id>/<id>.json with per-rollout-index hover frames
+  // under <id>/frames/<series>/NNNN.jpg. `label` shows in the dropdown, `title`
+  // above the chart.
   const QUAL_TASKS = [
     {
       id: "lib2",
+      label: "Stove + moka pot",
       title: "LIBERO-10 · Turn on the stove and put the moka pot on it",
+    },
+    {
+      id: "lib5",
+      label: "Book into caddy",
+      title: "LIBERO-10 · Pick up the book and place it in the back compartment of the caddy",
+    },
+    {
+      id: "lib6",
+      label: "Mug + pudding",
+      title: "LIBERO-10 · Put the white mug on the plate and the chocolate pudding to its right",
+    },
+    {
+      id: "lib9",
+      label: "Mug into microwave",
+      title: "LIBERO-10 · Put the yellow and white mug in the microwave and close it",
     },
   ];
 
@@ -339,49 +357,89 @@
     showIndex(cap - 1);
   }
 
-  /* ── init ────────────────────────────────────────────────────────────── */
+  /* ── init: dropdown selector + single-task render ────────────────────── */
+
+  const taskJsonCache = new Map(); // id -> task object (or null if it failed)
+
+  async function loadTask(taskCfg) {
+    if (taskJsonCache.has(taskCfg.id)) return taskJsonCache.get(taskCfg.id);
+    let task = null;
+    try {
+      const url = "assets/qualitative/" + taskCfg.id + "/" + taskCfg.id + ".json";
+      const response = await fetch(url, { cache: "no-store" });
+      if (!response.ok) throw new Error("fetch failed");
+      const payload = await response.json();
+      task = payload[taskCfg.id] || null;
+      if (task) task.base = "assets/qualitative/" + taskCfg.id;
+    } catch (error) {
+      task = null;
+    }
+    taskJsonCache.set(taskCfg.id, task);
+    return task;
+  }
 
   async function initQualitativeCharts() {
     const grid = document.getElementById("qualitative-grid");
     if (!grid) return;
 
-    let rendered = 0;
+    const card = document.createElement("article");
+    card.className = "qual-card";
+
+    // selector row (before the title)
+    const controls = document.createElement("div");
+    controls.className = "qual-controls";
+    const selLabel = document.createElement("label");
+    selLabel.className = "qual-select-label";
+    selLabel.setAttribute("for", "qual-task-select");
+    selLabel.textContent = "Task";
+    const select = document.createElement("select");
+    select.className = "qual-select";
+    select.id = "qual-task-select";
     for (const taskCfg of QUAL_TASKS) {
-      let payload = null;
-      try {
-        const url = "assets/qualitative/" + taskCfg.id + "/" + taskCfg.id + ".json";
-        const response = await fetch(url, { cache: "no-store" });
-        if (!response.ok) throw new Error("fetch failed");
-        payload = await response.json();
-      } catch (error) {
-        continue;
+      const opt = document.createElement("option");
+      opt.value = taskCfg.id;
+      opt.textContent = taskCfg.label || taskCfg.id;
+      select.appendChild(opt);
+    }
+    controls.appendChild(selLabel);
+    controls.appendChild(select);
+
+    const title = document.createElement("h4");
+    title.className = "qual-card-title";
+
+    const layout = document.createElement("div");
+    layout.className = "qual-layout";
+
+    card.appendChild(controls);
+    card.appendChild(title);
+    card.appendChild(layout);
+    grid.appendChild(card);
+
+    async function showTask(id) {
+      const taskCfg = QUAL_TASKS.find((t) => t.id === id) || QUAL_TASKS[0];
+      const task = await loadTask(taskCfg);
+      layout.innerHTML = "";
+      if (!task) {
+        title.textContent = "";
+        const panel = grid.closest(".qual-panel");
+        if (panel) panel.classList.add("qual-fallback");
+        return;
       }
-
-      const task = payload[taskCfg.id];
-      if (!task) continue;
-      task.base = "assets/qualitative/" + taskCfg.id;
-
-      const card = document.createElement("article");
-      card.className = "qual-card";
-
-      const title = document.createElement("h4");
-      title.className = "qual-card-title";
-      title.textContent = taskCfg.title || task.title;
-      card.appendChild(title);
-
-      const layout = document.createElement("div");
-      layout.className = "qual-layout";
-      card.appendChild(layout);
-
-      grid.appendChild(card);
-      buildChart(task, layout);
-      rendered += 1;
-    }
-
-    if (!rendered) {
       const panel = grid.closest(".qual-panel");
-      if (panel) panel.classList.add("qual-fallback");
+      if (panel) panel.classList.remove("qual-fallback");
+      title.textContent = taskCfg.title || task.title;
+      buildChart(task, layout);
     }
+
+    select.addEventListener("change", () => showTask(select.value));
+
+    // Default = first task (lib2), or a #libN hash if it matches a task.
+    const hashId = (window.location.hash || "").replace(/^#/, "");
+    const defaultId = QUAL_TASKS.some((t) => t.id === hashId)
+      ? hashId
+      : QUAL_TASKS[0].id;
+    select.value = defaultId;
+    showTask(defaultId);
   }
 
   if (document.readyState === "loading") {

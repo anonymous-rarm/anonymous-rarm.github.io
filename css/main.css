@@ -851,6 +851,50 @@ a {
   box-shadow: var(--shadow-sm);
 }
 
+.qual-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin-bottom: 2px;
+}
+
+.qual-select-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.qual-select {
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--text-primary);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: 999px;
+  padding: 6px 34px 6px 14px;
+  cursor: pointer;
+  /* custom caret */
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'><path d='M2 4l4 4 4-4' fill='none' stroke='%237a7a7a' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 13px center;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.qual-select:hover {
+  border-color: var(--cool-horizon);
+}
+
+.qual-select:focus-visible {
+  outline: none;
+  border-color: var(--cool-horizon);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.18);
+}
+
 .qual-card-title {
   margin: 0;
   color: var(--text-primary);
