@@ -90,14 +90,20 @@
       <!-- ── Simulation Experiments ─────────────────────────────────────── -->
       <div class="tagline" id="simulation">Simulation Experiments</div>
 
-      <!-- Commented out for now
       <section class="section section-simulation card-surface section-card" aria-label="Qualitative comparisons">
         <h3 class="sub-title" data-reveal>Qualitative Comparisons</h3>
-        <div class="content-placeholder" data-reveal>
-          <div class="placeholder-box"><span>Qualitative comparison figures</span></div>
+        <p class="results-caption" data-reveal>
+          Cumulative reward our model assigns along a successful vs. a failed
+          rollout of the same task. Hover the plot to scrub through the rollout:
+          the dots track each curve and the frames update to the matching step.
+        </p>
+        <div class="qual-panel" data-reveal>
+          <div id="qualitative-grid" class="qualitative-grid"></div>
+          <div class="placeholder-box qual-fallback-msg">
+            <span>Qualitative comparison chart unavailable</span>
+          </div>
         </div>
       </section>
-      -->
 
       <section class="section section-simulation card-surface section-card" aria-label="Quantitative experiments">
         <h3 class="sub-title" data-reveal>Quantitative Experiments</h3>
@@ -439,5 +445,6 @@
 
     <script src="js/main.js"></script>
     <script src="js/results-charts.js"></script>
+    <script src="js/qualitative-chart.js"></script>
   </body>
 </html>

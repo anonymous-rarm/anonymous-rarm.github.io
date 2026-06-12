@@ -819,3 +819,129 @@ a {
     font-size: 11px;
   }
 }
+
+/* ── Qualitative comparison (interactive scrubbing chart) ──────────────── */
+.qualitative-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* Fallback message hidden unless the chart fails to load. */
+.qual-fallback-msg {
+  display: none;
+}
+
+.qual-panel.qual-fallback .qualitative-grid {
+  display: none;
+}
+
+.qual-panel.qual-fallback .qual-fallback-msg {
+  display: flex;
+}
+
+.qual-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px 16px 12px;
+  border: 1px solid var(--border-light);
+  border-radius: 14px;
+  background: var(--bg-surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.qual-card-title {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.qual-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  align-items: stretch;
+}
+
+.qual-chart-svg {
+  flex: 1 1 60%;
+  min-width: 320px;
+  display: block;
+  width: 100%;
+  height: auto;
+  touch-action: none;
+}
+
+.qual-frames {
+  flex: 1 1 230px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 200px;
+}
+
+.qual-frame-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+}
+
+.qual-frame-head {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.qual-frame-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+
+.qual-frame-label {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.qual-frame-value {
+  margin-left: auto;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.qual-frame-img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border-light);
+  background: var(--bg-elevated);
+}
+
+.qual-frame-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 720px) {
+  .qual-layout {
+    flex-direction: column;
+  }
+  .qual-frames {
+    flex-direction: row;
+  }
+  .qual-frame-card {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+}
