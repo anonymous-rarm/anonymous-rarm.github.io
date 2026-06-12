@@ -67,8 +67,8 @@
     let yMax = Number(task.y_max) || 1;
     if (yMax <= yMin) yMax = yMin + 1;
 
-    const width = 720;
-    const height = 380;
+    const width = 600;
+    const height = 440;
     const margin = { top: 18, right: 18, bottom: 52, left: 60 };
     const plotW = width - margin.left - margin.right;
     const plotH = height - margin.top - margin.bottom;
@@ -239,7 +239,10 @@
     });
     svg.appendChild(capture);
 
-    mount.appendChild(svg);
+    const chartMain = document.createElement("div");
+    chartMain.className = "qual-chart-main";
+    chartMain.appendChild(svg);
+    mount.appendChild(chartMain);
 
     // ── frame preview column ─────────────────────────────────────────────
     const frames = document.createElement("div");
@@ -265,6 +268,7 @@
 
       const imgWrap = document.createElement("div");
       imgWrap.className = "qual-frame-img";
+      imgWrap.style.borderColor = colorForSeries(name);
       const img = document.createElement("img");
       img.alt = name + " rollout frame";
       img.decoding = "async";
@@ -312,7 +316,7 @@
 
         const ref = frameRefs[name];
         ref.img.src = frameUrl(series, i);
-        ref.value.textContent = "step " + i + " · reward " + yVal.toFixed(1);
+        ref.value.textContent = "step " + i;
       }
     }
 
