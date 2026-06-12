@@ -40,6 +40,8 @@
     "AblationSim",
   ];
 
+  const OURS_KEY = "RARM (ours)";
+
   const resultsState = {
     data: null,
     methods: [],
@@ -198,8 +200,16 @@
       );
     }
 
+    // Draw order: baselines first, ours above them, hovered on top (mirrors
+    // plot_seeds.py zorder where ours sits over the baselines).
+    const drawRank = (name) =>
+      resultsState.hovered === name ? 2 : name === OURS_KEY ? 1 : 0;
+    const orderedSeries = visibleDataSeries
+      .slice()
+      .sort((a, b) => drawRank(a[0]) - drawRank(b[0]));
+
     // ── std bands (drawn first so mean lines render on top) ──────────────
-    for (const [name, mean] of visibleDataSeries) {
+    for (const [name, mean] of orderedSeries) {
       const std = (task.std && task.std[name]) || [];
       if (!std.length) continue;
       const len = Math.min(mean.length, std.length, xValues.length);
@@ -220,19 +230,27 @@
         .map((p) => "L" + p[0].toFixed(2) + " " + p[1].toFixed(2))
         .join(" ");
 
-      const isMuted = Boolean(resultsState.hovered && resultsState.hovered !== name);
+      const isHovered = resultsState.hovered === name;
+      const isMuted = Boolean(resultsState.hovered && !isHovered);
+      const isOurs = name === OURS_KEY;
+      // Ours: prominent/darker band; baselines: faint (matches plot_seeds.py
+      // alpha 0.28 vs 0.10). Hover lifts the band; non-hovered fade right back.
+      let bandOpacity;
+      if (isMuted) bandOpacity = 0.05;
+      else if (isHovered) bandOpacity = isOurs ? 0.32 : 0.22;
+      else bandOpacity = isOurs ? 0.3 : 0.1;
       svg.appendChild(
         createSvgElement("path", {
           d: dUp + " " + dDown + " Z",
           fill: colorForMethod(name),
           stroke: "none",
-          opacity: isMuted ? 0.05 : 0.15,
+          opacity: bandOpacity,
         })
       );
     }
 
     // ── mean polylines (markers gated off: training curves have many points) ──
-    for (const [name, values] of visibleDataSeries) {
+    for (const [name, values] of orderedSeries) {
       const points = [];
       const len = Math.min(values.length, xValues.length);
       for (let i = 0; i < len; i += 1) {
@@ -240,10 +258,12 @@
       }
       if (!points.length) continue;
 
+      const isOurs = name === OURS_KEY;
       const isHovered = resultsState.hovered === name;
       const isMuted = Boolean(resultsState.hovered && !isHovered);
       const lineOpacity = isMuted ? 0.22 : 1;
-      const strokeWidth = isHovered ? 4.2 : 3.2;
+      // Ours thick, baselines thinner (plot_seeds.py lw 2.6 vs 1.3); hover bolds.
+      const strokeWidth = isHovered ? 4.4 : isOurs ? 3.4 : 1.9;
 
       const d = points
         .map((p, i) => (i === 0 ? "M" : "L") + p[0].toFixed(2) + " " + p[1].toFixed(2))
