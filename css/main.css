@@ -223,9 +223,8 @@ a {
 
 /* ── Contributions ────────────────────────────────────────────────────── */
 
-.contributions-title {
-  margin-top: 72px;
-  margin-bottom: 12px;
+.sub-title.contributions-title {
+  margin: 72px 0 12px;
 }
 
 .contributions-list {
