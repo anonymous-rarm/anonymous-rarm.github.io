@@ -221,6 +221,42 @@ a {
   background: #000;
 }
 
+/* ── Contributions ────────────────────────────────────────────────────── */
+
+.contributions {
+  list-style: none;
+  margin: 28px auto 0;
+  padding: 0;
+  max-width: 820px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contributions li {
+  position: relative;
+  padding-left: 30px;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text-secondary);
+}
+
+.contributions li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 0.55em;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--gradient-full);
+}
+
+.contributions li strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
 /* ── Hero logo ────────────────────────────────────────────────────────── */
 
 .hero-logo {
@@ -482,6 +518,56 @@ a {
   border-radius: 14px;
   border: 1px solid var(--border-subtle);
   box-shadow: var(--shadow-sm);
+}
+
+/* ── DSRL Episodes arrow (left → right) ───────────────────────────────── */
+
+.dsrl-arrow {
+  position: relative;
+  margin: 18px auto 4px;
+  max-width: 720px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dsrl-arrow::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 14px;
+  top: 50%;
+  height: 3px;
+  transform: translateY(-50%);
+  border-radius: 2px;
+  background: var(--gradient-full);
+}
+
+.dsrl-arrow::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 14px solid var(--blue-energy);
+}
+
+.dsrl-arrow-label {
+  position: relative;
+  z-index: 1;
+  padding: 4px 16px;
+  background: var(--bg-surface);
+  font-family: 'Space Grotesk', -apple-system, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-primary);
 }
 
 .results-table {

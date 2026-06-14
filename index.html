@@ -23,7 +23,7 @@
           <a href="#top" data-nav="top"><span class="progress-dot"></span><span class="progress-label">Intro</span></a>
         </div>
         <div class="progress-item" data-section="motivation">
-          <a href="#motivation" data-nav="motivation"><span class="progress-dot"></span><span class="progress-label">Motivation</span></a>
+          <a href="#motivation" data-nav="motivation"><span class="progress-dot"></span><span class="progress-label">Overview</span></a>
         </div>
         <div class="progress-item" data-section="method">
           <a href="#method" data-nav="method"><span class="progress-dot"></span><span class="progress-label">Method</span></a>
@@ -69,13 +69,18 @@
         </div>
       </section>
 
-      <!-- ── Motivation ────────────────────────────────────────────────── -->
-      <div class="tagline" id="motivation">Motivation</div>
+      <!-- ── Overview ──────────────────────────────────────────────────── -->
+      <div class="tagline" id="motivation">Overview</div>
       <section class="section section-motivation card-surface section-card" aria-labelledby="motivation-title">
-        <h2 id="motivation-title" class="visually-hidden">Motivation</h2>
+        <h2 id="motivation-title" class="visually-hidden">Overview</h2>
         <figure class="motivation-video" data-reveal>
           <video data-src="assets/video/motivation.mp4" autoplay muted loop playsinline preload="none" controls></video>
         </figure>
+        <ul class="contributions" data-reveal>
+          <li>We introduce <strong>RARM</strong>, which turns a single successful demonstration into a dense progress reward with no task-specific reward supervision&mdash;achieving data-light, confidence-aware progress estimation where prior work meets only one of these criteria.</li>
+          <li>RARM rewards confident forward progress and explicitly filters out low-confidence matches, suppressing the false-positive rewards that drive reward hacking.</li>
+          <li>Across 9 simulated tasks (LIBERO, MetaWorld) and 4 real-world tasks, RARM achieves the best overall success rates with low-overhead reward queries, with especially large gains on long-horizon settings such as cloth folding.</li>
+        </ul>
       </section>
 
       <!-- ── Method ────────────────────────────────────────────────────── -->
@@ -259,6 +264,9 @@
                 </tr>
               </tbody>
             </table>
+          </div>
+          <div class="dsrl-arrow" data-reveal aria-label="DSRL Episodes increasing from left to right">
+            <span class="dsrl-arrow-label">DSRL Episodes</span>
           </div>
         </div>
       </section>
