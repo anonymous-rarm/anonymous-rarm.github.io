@@ -1110,6 +1110,10 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  /* Reset the global img border/radius/shadow so it sits flush to the colored border. */
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 @media (max-width: 720px) {

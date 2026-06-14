@@ -114,9 +114,13 @@
       <section class="section section-simulation card-surface section-card" aria-label="Qualitative comparisons">
         <h3 class="sub-title" data-reveal>Qualitative Comparisons</h3>
         <p class="results-caption" data-reveal>
-          Cumulative reward our model assigns along a successful vs. a failed
-          rollout of the same task. Hover the plot to scrub through the rollout:
-          the dots track each curve and the frames update to the matching step.
+          RARM's cumulative reward along a successful vs. a failed rollout of the
+          same task. This is the running total of RARM's reward, not a raw
+          progress estimate: RARM matches each clip against references with a
+          confidence gate, and adds +1 whenever a confident match beats the
+          highest progress reached so far. Hover the plot to scrub through the
+          rollout &mdash; the dots track each curve and the frames update to the
+          matching step.
         </p>
         <div class="qual-panel" data-reveal>
           <div id="qualitative-grid" class="qualitative-grid"></div>
