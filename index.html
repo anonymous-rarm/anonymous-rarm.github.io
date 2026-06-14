@@ -9,8 +9,8 @@
       content="RARM: Confidence-Gated Progress Reward Modeling for RL in Manipulation. Anonymous submission under review at CoRL 2026."
     />
     <link rel="icon" type="image/svg+xml" href="assets/rarm_robot_sketch_transparent.svg" />
-    <link rel="stylesheet" href="css/omnireset-theme.css?v=20260614d" />
-    <link rel="stylesheet" href="css/main.css?v=20260614d" />
+    <link rel="stylesheet" href="css/omnireset-theme.css?v=20260614e" />
+    <link rel="stylesheet" href="css/main.css?v=20260614e" />
   </head>
   <body>
     <a class="skip-link" href="#motivation">Skip to content</a>
@@ -155,8 +155,9 @@
         </div>
         <p class="ablation-desc" data-reveal>
           Each variant disables one part of RARM. The full model (blue) reaches a high success rate
-          the fastest and holds it. <strong>w/o Cross-Attn</strong> drops the demonstration reference,
-          so progress is ungrounded; <strong>w/o Temporal</strong> loses motion cues and rewards static
+          the fastest and holds it. <strong>w/o Cross-Attn</strong> replaces the learned cross-attention
+          comparator with a simpler distance-based comparison, weakening rollout&ndash;reference matching
+          and degrading progress localization; <strong>w/o Temporal</strong> loses motion cues and rewards static
           frames that merely look like success. The confidence gate is the key factor: without it
           (<strong>w/o Gate</strong>) noisy frame matches inject spurious reward and convergence slows,
           while an over-strict gate (<strong>Strict Gate</strong>) rejects too many frames and starves
