@@ -9,8 +9,8 @@
       content="RARM: Confidence-Gated Progress Reward Modeling for RL in Manipulation. Anonymous submission under review at CoRL 2026."
     />
     <link rel="icon" type="image/svg+xml" href="assets/rarm_robot_sketch_transparent.svg" />
-    <link rel="stylesheet" href="css/omnireset-theme.css?v=20260614" />
-    <link rel="stylesheet" href="css/main.css?v=20260614" />
+    <link rel="stylesheet" href="css/omnireset-theme.css?v=20260614b" />
+    <link rel="stylesheet" href="css/main.css?v=20260614b" />
   </head>
   <body>
     <a class="skip-link" href="#motivation">Skip to content</a>
@@ -76,17 +76,20 @@
         <figure class="motivation-video" data-reveal>
           <video data-src="assets/video/motivation.mp4" autoplay muted loop playsinline preload="none" controls></video>
         </figure>
-        <h3 class="sub-title contributions-title" data-reveal>Contributions</h3>
+        <h3 class="sub-title contributions-title" data-reveal>Our Contributions</h3>
         <div class="contributions-list" data-reveal>
           <div class="contribution-item">
+            <div class="contribution-step">Contribution 1</div>
             <h4>Data-light, confidence-aware progress reward</h4>
             <p>We introduce <strong>RARM</strong>, which turns a single successful demonstration into a dense progress reward with no task-specific reward supervision&mdash;achieving data-light, confidence-aware progress estimation where prior work meets only one of these criteria.</p>
           </div>
           <div class="contribution-item">
+            <div class="contribution-step">Contribution 2</div>
             <h4>Confidence gating against reward hacking</h4>
             <p>RARM rewards confident forward progress and explicitly filters out low-confidence matches, suppressing the false-positive rewards that drive reward hacking.</p>
           </div>
           <div class="contribution-item">
+            <div class="contribution-step">Contribution 3</div>
             <h4>Best overall success with low overhead</h4>
             <p>Across 9 simulated tasks (LIBERO, MetaWorld) and 4 real-world tasks, RARM achieves the best overall success rates with low-overhead reward queries, with especially large gains on long-horizon settings such as cloth folding.</p>
           </div>
