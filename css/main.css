@@ -548,12 +548,18 @@ a {
   box-shadow: var(--shadow-sm);
 }
 
-.realworld-arrow {
-  margin: 14px 0 0;
+.results-table tfoot .dsrl-arrow-row td {
+  background: var(--bg-surface);
+  border: none;
+  padding: 0;
+}
+
+.results-table tfoot .dsrl-arrow-cell {
+  padding: 10px 6px 4px;
   line-height: 0;
 }
 
-.realworld-arrow img {
+.results-table tfoot .dsrl-arrow-cell img {
   display: block;
   width: 100%;
   height: auto;
