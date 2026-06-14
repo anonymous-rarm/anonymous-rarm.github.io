@@ -549,6 +549,19 @@ a {
   box-shadow: var(--shadow-sm);
 }
 
+.realworld-arrow {
+  margin: 14px 0 0;
+  line-height: 0;
+}
+
+.realworld-arrow img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: none;
+  box-shadow: none;
+}
+
 .results-table {
   width: 100%;
   border-collapse: collapse;

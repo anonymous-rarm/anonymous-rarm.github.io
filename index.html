@@ -9,8 +9,8 @@
       content="RARM: Confidence-Gated Progress Reward Modeling for RL in Manipulation. Anonymous submission under review at CoRL 2026."
     />
     <link rel="icon" type="image/svg+xml" href="assets/rarm_robot_sketch_transparent.svg" />
-    <link rel="stylesheet" href="css/omnireset-theme.css?v=20260614e" />
-    <link rel="stylesheet" href="css/main.css?v=20260614e" />
+    <link rel="stylesheet" href="css/omnireset-theme.css?v=20260614f" />
+    <link rel="stylesheet" href="css/main.css?v=20260614f" />
   </head>
   <body>
     <a class="skip-link" href="#motivation">Skip to content</a>
@@ -100,7 +100,7 @@
         <figure class="method-figure" data-reveal>
           <img src="assets/figures/method.png" alt="RARM method overview" loading="lazy" />
           <figcaption class="method-caption">
-            <strong>Method Overview.</strong> <em>Reward Model Training:</em> As in (c), we sample an anchor clip from an unlabeled video, positives from the same temporal region, and negatives from three complementary sources. These pairs are scored by the comparator in (a), trained with a soft-nearest-neighbours loss. <em>RL Training:</em> Given a reference and a rollout video in (b), each rollout clip is compared with all reference clips to form the matrix in (d). Progress is read from the best-matched reference clips and passed through a confidence gate to produce the reward, with which the policy is updated as new rollouts are collected iteratively. The confidence threshold in (e) is set automatically from self-comparisons within the reference video.
+            <strong>Method Overview.</strong> <em>Reward Model Training:</em> As in (c), we sample an anchor clip from an unlabeled video, positives from the same temporal region, and negatives from three complementary sources. These pairs are scored by the comparator in (a), trained with a soft-nearest-neighbours loss. <em>RL Training:</em> Given a reference and a rollout video in (b), each rollout clip is compared with all reference clips to form the matrix in (d). Rather than using these similarities directly as rewards, RARM uses them to estimate where the rollout lies along the reference, reading progress from the best-matched reference clips. To avoid false-positive progress, this estimate is passed through a confidence gate in (e): uncertain matches are suppressed, so the policy is not rewarded when progress localization is unreliable. The policy is updated with the resulting reward as new rollouts are collected iteratively. The confidence threshold is computed once from self-comparisons within the reference demonstration, which sets how strong a valid match should be.
           </figcaption>
         </figure>
       </section>
@@ -279,6 +279,9 @@
               </tbody>
             </table>
           </div>
+          <figure class="realworld-arrow" data-reveal>
+            <img src="assets/figures/real_world_experiments_arrow.png" alt="More DSRL rollouts collected over the course of RL training" loading="lazy" />
+          </figure>
         </div>
       </section>
 
