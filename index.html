@@ -77,17 +77,17 @@
           <video data-src="assets/video/motivation.mp4" autoplay muted loop playsinline preload="none" controls></video>
         </figure>
         <h3 class="sub-title contributions-title" data-reveal>Contributions</h3>
-        <div class="contributions-grid" data-reveal>
-          <div class="contribution-card">
-            <span class="contribution-num">1</span>
+        <div class="contributions-list" data-reveal>
+          <div class="contribution-item">
+            <h4>Data-light, confidence-aware progress reward</h4>
             <p>We introduce <strong>RARM</strong>, which turns a single successful demonstration into a dense progress reward with no task-specific reward supervision&mdash;achieving data-light, confidence-aware progress estimation where prior work meets only one of these criteria.</p>
           </div>
-          <div class="contribution-card">
-            <span class="contribution-num">2</span>
+          <div class="contribution-item">
+            <h4>Confidence gating against reward hacking</h4>
             <p>RARM rewards confident forward progress and explicitly filters out low-confidence matches, suppressing the false-positive rewards that drive reward hacking.</p>
           </div>
-          <div class="contribution-card">
-            <span class="contribution-num">3</span>
+          <div class="contribution-item">
+            <h4>Best overall success with low overhead</h4>
             <p>Across 9 simulated tasks (LIBERO, MetaWorld) and 4 real-world tasks, RARM achieves the best overall success rates with low-overhead reward queries, with especially large gains on long-horizon settings such as cloth folding.</p>
           </div>
         </div>
@@ -274,20 +274,6 @@
                 </tr>
               </tbody>
             </table>
-          </div>
-          <div class="dsrl-arrow" data-reveal aria-label="DSRL Episodes increasing from left to right">
-            <svg class="dsrl-arrow-svg" viewBox="0 0 1000 48" preserveAspectRatio="none" role="img" aria-hidden="true">
-              <defs>
-                <linearGradient id="dsrlGrad" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stop-color="#d4940a" />
-                  <stop offset="50%" stop-color="#9333ea" />
-                  <stop offset="100%" stop-color="#2563eb" />
-                </linearGradient>
-              </defs>
-              <line x1="6" y1="24" x2="958" y2="24" stroke="url(#dsrlGrad)" stroke-width="6" stroke-linecap="round" />
-              <path d="M958 10 L992 24 L958 38 Z" fill="#2563eb" />
-            </svg>
-            <span class="dsrl-arrow-label">DSRL Episodes</span>
           </div>
         </div>
       </section>
