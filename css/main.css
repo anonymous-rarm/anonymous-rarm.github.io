@@ -224,7 +224,8 @@ a {
 /* ── Contributions ────────────────────────────────────────────────────── */
 
 .contributions-title {
-  margin-top: 60px;
+  margin-top: 72px;
+  margin-bottom: 12px;
 }
 
 .contributions-list {
@@ -241,6 +242,7 @@ a {
   background: var(--bg-elevated);
   border: 1px solid var(--border-subtle);
   box-shadow: var(--shadow-sm);
+  text-align: left;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -252,7 +254,7 @@ a {
 .contribution-item h4 {
   margin: 0 0 8px;
   font-family: 'Space Grotesk', -apple-system, sans-serif;
-  font-size: 16px;
+  font-size: 19px;
   font-weight: 600;
   color: var(--text-primary);
   line-height: 1.3;
@@ -260,7 +262,7 @@ a {
 
 .contribution-item p {
   margin: 0;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.6;
   color: var(--text-secondary);
 }
@@ -316,6 +318,20 @@ a {
   border-radius: 24px;
   border: none;
   box-shadow: none;
+}
+
+.method-caption {
+  margin: 20px auto 6px;
+  max-width: 880px;
+  padding: 0 24px;
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  text-align: left;
+}
+
+.method-caption strong {
+  color: var(--text-primary);
 }
 
 /* ── Ablation figures (two in a row) ──────────────────────────────────── */

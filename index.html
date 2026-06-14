@@ -9,8 +9,8 @@
       content="RARM: Confidence-Gated Progress Reward Modeling for RL in Manipulation. Anonymous submission under review at CoRL 2026."
     />
     <link rel="icon" type="image/svg+xml" href="assets/rarm_robot_sketch_transparent.svg" />
-    <link rel="stylesheet" href="css/omnireset-theme.css?v=20260614c" />
-    <link rel="stylesheet" href="css/main.css?v=20260614c" />
+    <link rel="stylesheet" href="css/omnireset-theme.css?v=20260614d" />
+    <link rel="stylesheet" href="css/main.css?v=20260614d" />
   </head>
   <body>
     <a class="skip-link" href="#motivation">Skip to content</a>
@@ -79,7 +79,7 @@
         <h3 class="sub-title contributions-title" data-reveal>Our Contributions</h3>
         <div class="contributions-list" data-reveal>
           <div class="contribution-item">
-            <h4>Data-light, confidence-aware progress reward</h4>
+            <h4>Data-light, reference-anchored progress reward</h4>
             <p>We introduce <strong>RARM</strong>, which turns a single successful demonstration into a dense progress reward with no task-specific reward supervision&mdash;achieving data-light, confidence-aware progress estimation where prior work meets only one of these criteria.</p>
           </div>
           <div class="contribution-item">
@@ -99,6 +99,9 @@
         <h2 id="method-title" class="visually-hidden">Method</h2>
         <figure class="method-figure" data-reveal>
           <img src="assets/figures/method.png" alt="RARM method overview" loading="lazy" />
+          <figcaption class="method-caption">
+            <strong>Method Overview.</strong> <em>Reward Model Training:</em> As in (c), we sample an anchor clip from an unlabeled video, positives from the same temporal region, and negatives from three complementary sources. These pairs are scored by the comparator in (a), trained with a soft-nearest-neighbours loss. <em>RL Training:</em> Given a reference and a rollout video in (b), each rollout clip is compared with all reference clips to form the matrix in (d). Progress is read from the best-matched reference clips and passed through a confidence gate to produce the reward, with which the policy is updated as new rollouts are collected iteratively. The confidence threshold in (e) is set automatically from self-comparisons within the reference video.
+          </figcaption>
         </figure>
       </section>
 
