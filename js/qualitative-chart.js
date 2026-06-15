@@ -18,12 +18,11 @@
   // under <id>/frames/<series>/NNNN.jpg. `label` shows in the dropdown, `title`
   // above the chart.
   const QUAL_TASKS = [
-    // Temporarily hidden (investigating an end-of-curve error):
-    // {
-    //   id: "lib2",
-    //   label: "Stove + moka pot",
-    //   title: "LIBERO-10 · Turn on the stove and put the moka pot on it",
-    // },
+    {
+      id: "lib2",
+      label: "Stove + moka pot",
+      title: "LIBERO-10 · Turn on the stove and put the moka pot on it",
+    },
     {
       id: "lib5",
       label: "Book into caddy",
@@ -34,12 +33,11 @@
       label: "Mug + pudding",
       title: "LIBERO-10 · Put the white mug on the plate and the chocolate pudding to its right",
     },
-    // Temporarily hidden (investigating an end-of-curve error):
-    // {
-    //   id: "lib9",
-    //   label: "Mug into microwave",
-    //   title: "LIBERO-10 · Put the yellow and white mug in the microwave and close it",
-    // },
+    {
+      id: "lib9",
+      label: "Mug into microwave",
+      title: "LIBERO-10 · Put the yellow and white mug in the microwave and close it",
+    },
   ];
 
   const SERIES_COLOR = {
@@ -88,7 +86,7 @@
     if (yMax <= yMin) yMax = yMin + 1;
 
     const width = 600;
-    const height = 440;
+    const height = 382;
     const margin = { top: 18, right: 18, bottom: 52, left: 60 };
     const plotW = width - margin.left - margin.right;
     const plotH = height - margin.top - margin.bottom;
