@@ -19,6 +19,11 @@
   // above the chart.
   const QUAL_TASKS = [
     {
+      id: "lib9",
+      label: "Mug into microwave",
+      title: "LIBERO-10 · Put the yellow and white mug in the microwave and close it",
+    },
+    {
       id: "lib2",
       label: "Stove + moka pot",
       title: "LIBERO-10 · Turn on the stove and put the moka pot on it",
@@ -37,11 +42,6 @@
       id: "lib6",
       label: "Mug + pudding",
       title: "LIBERO-10 · Put the white mug on the plate and the chocolate pudding to its right",
-    },
-    {
-      id: "lib9",
-      label: "Mug into microwave",
-      title: "LIBERO-10 · Put the yellow and white mug in the microwave and close it",
     },
   ];
 
