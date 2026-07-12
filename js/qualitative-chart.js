@@ -24,6 +24,11 @@
       title: "LIBERO-10 · Turn on the stove and put the moka pot on it",
     },
     {
+      id: "lib3",
+      label: "Bowl into drawer",
+      title: "LIBERO-10 · Put the black bowl in the bottom drawer and close it",
+    },
+    {
       id: "lib5",
       label: "Book into caddy",
       title: "LIBERO-10 · Pick up the book and place it in the back compartment of the caddy",
